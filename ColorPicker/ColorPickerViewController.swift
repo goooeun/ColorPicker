@@ -45,10 +45,10 @@ class ColorPickerViewController: UIViewController {
         colorCollectionView.backgroundColor = .white
         
         colorCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        colorCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        colorCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        colorCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        colorCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        colorCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 8).isActive = true
+        colorCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -8).isActive = true
+        colorCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 8).isActive = true
+        colorCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -8).isActive = true
     }
     
     func createColorPalette() {
@@ -94,7 +94,7 @@ extension ColorPickerViewController: UICollectionViewDelegate {
 
 extension ColorPickerViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellSize = self.view.frame.width/10
+        let cellSize = colorCollectionView.frame.width/10
         
         return CGSize(width: cellSize, height: cellSize)
     }
